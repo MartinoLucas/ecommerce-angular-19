@@ -2,6 +2,29 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
 
+## Authors
+
+This project is maintained by the following authors:
+
+- **Lucas Martino** - [GitHub](https://github.com/MartinoLucas)
+- **Juan Pedro Tagliaferro** - [GitHub](https://github.com/JuampiJPT)
+
+We welcome contributions from the community. If you would like to contribute, please feel free to submit a pull request or open an issue.
+
+## Project Overview
+
+This ecommerce project serves as a comprehensive example to demonstrate the capabilities and features of Angular version 19.1.3. It covers various aspects of Angular development, including:
+
+- **Component-based architecture**: Learn how to create and manage reusable components.
+- **Routing and navigation**: Understand how to set up and configure routes for seamless navigation.
+- **State management**: Explore techniques for managing application state using services and state management libraries.
+- **Forms and validation**: Implement reactive and template-driven forms with validation.
+- **HTTP client**: Interact with backend services using Angular's HTTP client module.
+- **Testing**: Write and run unit and end-to-end tests to ensure the reliability of your application.
+- **Build and deployment**: Optimize and deploy your application for production.
+
+By working through this project, you will gain practical experience and a deeper understanding of Angular's core concepts and best practices.
+
 ## Development server
 
 To start a local development server, run:
