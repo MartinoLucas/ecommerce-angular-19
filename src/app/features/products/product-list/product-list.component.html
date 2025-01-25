@@ -1,0 +1,13 @@
+<div class="m-10 grid gap-x-4 gap-y-2 grid-cols-6">
+    @defer (on viewport) {
+    
+        @for (product of products ; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+        }
+    }@loading( ) {
+        <p>Loading...</p>
+    }@placeholder {
+        <p>products</p>
+    }
+  
+</div>

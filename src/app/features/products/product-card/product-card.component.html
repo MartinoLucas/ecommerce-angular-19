@@ -1,0 +1,45 @@
+<div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 h-60">
+    <!-- Imagen del producto -->
+    <img
+      class="w-full h-auto rounded-t-xl"
+      [src]="'https://via.placeholder.com/320?text=' + product.name"
+      [alt]="product.name"
+    />
+  
+    <!-- Contenido del producto -->
+    <div class="p-4 md:p-5">
+      <!-- Título del producto -->
+      <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+        {{ product.name }}
+      </h3>
+  
+      <!-- Descripción -->
+      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        {{ product.description }}
+      </p>
+  
+      <!-- Precio -->
+      <p class="mt-2 text-xl font-semibold text-gray-800 dark:text-gray-200">
+        ${{ product.price }}
+      </p>
+  
+      <!-- Categoría -->
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        Categoría: {{ product.categoryName }} > {{ product.subCategoryName }}
+      </p>
+  
+      <!-- Estado de stock -->
+        @if (product.stock > 0) {
+        <p class="mt-2 inline-block rounded-md bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
+          En stock: {{ product.stock }}
+        </p>
+        }
+        @if (product.stock === 0) {
+          <p class="mt-2 inline-block rounded-md bg-red-100 px-3 py-1 text-sm font-medium text-red-700">
+            Sin stock
+          </p>
+        }
+        
+    </div>
+  </div>
+  
