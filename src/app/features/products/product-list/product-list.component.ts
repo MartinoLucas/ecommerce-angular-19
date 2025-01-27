@@ -1,32 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
-
+import {toSignal} from '@angular/core/rxjs-interop'
 @Component({
   selector: 'app-product-list',
   imports: [ProductCardComponent],
   templateUrl: './product-list.component.html',
+  changeDetection:ChangeDetectionStrategy.OnPush,
   styleUrl: './product-list.component.scss'
 })
-export class ProductListComponent implements OnInit{
-  products: Product[] | undefined;
+export class ProductListComponent {
+  
+  productService = inject(ProductService)
+  
+  products:Signal<Product[] | undefined> = toSignal(
+    this.productService.getProducts(),
+  );
 
-  constructor(private productService: ProductService){}
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
-
-  getProducts(){
-    this.productService.getProducts().subscribe({
-      next:(response)=>{
-        this.products=response;
-      },
-      error:(error)=>{
-        console.log("error al obtener los productos", error);
-      }
-    });
-  }
+  
 
 }

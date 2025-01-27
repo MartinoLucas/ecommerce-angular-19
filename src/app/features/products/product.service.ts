@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Product } from './product.model';
+import { Injectable, inject } from '@angular/core';
+import { Product, ProductRequest } from './product.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -7,12 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-
-  constructor(private http : HttpClient) { }
-
+  private http = inject(HttpClient);
+  private url = "http://localhost:8080/api/products/"
 
   getProducts():Observable<Product[]>{
-    return this.http.get<Product[]>("http://localhost:8080/api/products/getAll")
+    return this.http.get<Product[]>(`${this.url}getAll`)
+  }
+
+  createProduct(product : ProductRequest):Observable<Product>{
+    return this.http.post<Product>(`${this.url}create`, product)
   }
 
 

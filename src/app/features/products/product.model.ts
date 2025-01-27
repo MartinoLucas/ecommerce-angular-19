@@ -7,3 +7,13 @@ export interface Product {
     subCategoryName: String;
     stock:number;
 }
+
+export interface ProductRequest{
+    name:String;
+    price: number;
+    description:String;
+    stock: number;
+    categoryId: number;
+    subCategoryId: number;
+    cost: number;
+}
